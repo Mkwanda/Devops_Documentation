@@ -1,0 +1,5 @@
+/mnt/c/Users/Name/Desktop/Azubi\ Projects
+
+
+ls -la ~/ | more
+

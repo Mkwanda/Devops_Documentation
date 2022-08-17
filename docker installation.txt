@@ -1,0 +1,103 @@
+#Update your linux packages
+..................
+
+sudo apt update
+sudo apt upgrade
+
+...........
+
+# Set up the repository
+...............
+
+sudo apt-get update
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+..............
+#add key -- key added
+...............
+sudo apt-get update
+
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+OR
+
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+
+...................
+#finding stable docker repository
+........................
+sudo apt-get update
+
+sudo add-apt-repository \
+"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+stable"
+
+
+OR
+
+sudo echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+
+...........
+#Install Docker Engine
+.................
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+............
+# Or Install a specific docker version if above does not work ( 5:20.10.11~3-0~ubuntu-focal )
+.......
+
+sudo apt-get install docker-ce=5:20.10.11~3-0~ubuntu-focal docker-ce-cli=5:20.10.11~3-0~ubuntu-focal containerd.io
+
+.....
+# Check docker version
+.........
+sudo docker --version
+
+........
+#Start Docker 
+........
+
+sudo service docker start
+.................
+# Check docker status
+...........
+
+sudo service docker status
+
+......
+#Test docker
+........
+sudo docker run hello-world
+
+
+>>>>>>>>>>>>>
+
+#Unmask docker  ( TRY this if docker fails to start)
+sudo systemctl unmask docker
+
+OR
+DOWNLOAD and INSTALL the DOCKER DESKTOP APP if still facing issues. link below
+
+https://docs.docker.com/engine/install/
+
+
+
+......
+By Kwanda
+Happy Learning ...
+Give me a shoutout on linkedin if you find this helpful..
+https://www.linkedin.com/in/mubarak-kwanda/

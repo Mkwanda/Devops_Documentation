@@ -1,0 +1,18 @@
+#!/bin/bash
+
+sudo su
+
+yum update -y
+
+yum install httpd -y
+
+echo "<html><h1> Welcome to Kwanda Server 1</h1><html>" >> /var/www/html/index.html
+
+systemctl start httpd
+
+systemctl enable httpd
+
+chmod 400 MySpotKey.pem
+
+ssh -i "MyKey.pem" ec2-user@ec2--38-69.compute-1.amazonaws.com
+

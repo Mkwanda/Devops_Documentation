@@ -1,0 +1,27 @@
+
+sudo docker ps -a
+
+sudo docker pull ubuntu
+
+sudo docker run -d -t --name Kwanda ubuntu
+
+sudo docker ps
+
+sudo docker stop Kwanda
+
+sudo docker rm Kwanda
+
+
+sudo docker rm -f Kwanda
+
+docker rm $(docker ps -aq)
+
+sudo docker rm -f $(sudo docker ps -aq)
+
+sudo docker run -it centos
+
+docker start -i 085e
+
+docker image ls
+
+touch dockerfile

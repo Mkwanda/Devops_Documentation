@@ -1,0 +1,25 @@
+Location url
+sudo nano /etc/ansible/hosts
+
+chexk invetory
+ansible-inventory --list -y
+
+
+
+[webservers]
+#reactsvr1 ansible_host=3.82.24.210
+ec2-3.82..compute-1.amazonaws.com
+
+reactsrv2 ansible_host=54.89.128.8 
+ec2-128-8.compute-1.amazonaws.com
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+ssh agent
+
+ssh-agent bash
+cp ReactAppkey.pem ~/.ssh/
+ssh-add ~/.ssh/ReactAppkey.pem
+
+ansible ansible-target-1 -m ping -i inventory.txt

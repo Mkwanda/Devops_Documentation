@@ -1,0 +1,20 @@
+Task Details
+Launching Lab Environment
+
+Create a Security Group for the ECS Cluster
+
+Create a Key Pair for the EC2 instances, inside the ECS Cluster
+
+Launching an ECS Cluster
+
+Navigate to the container instance, copy the public IP required for SSH.
+
+SSH into the underlying EC2 instance.
+
+Create a Dockerfile and build a docker image.
+
+Create a repository in ECR and run the push commands.
+
+Validation of the lab
+
+Deleting AWS Resources

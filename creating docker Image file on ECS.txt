@@ -1,0 +1,70 @@
+Get the root access using the following command: 
+
+sudo su
+
+Now run the updates using the following command: 
+
+yum -y update
+
+Check the Docker version by running the following command:
+
+docker version
+
+Check all the docker processes running in the ECS Cluster by running the following command:
+
+docker ps
+
+Install AWS CLI by running the following command:
+
+yum install awscli -y
+
+Create a Dockerfile by running the following command:
+
+touch Dockerfile
+
+Put the instructions in the Dockerfile by running the following command:
+
+vi Dockerfile
+
+Paste the below code in Dockerfile after pressing i or insert mode
+#This is a sample Image
+
+FROM ubuntu
+
+MAINTAINER someone@example.com
+
+RUN apt-get update
+
+RUN apt-get install nginx -y
+
+CMD ["echo","Image created"]
+
+
+
+build docker image
+
+docker build -t Kwanda .
+
+Check the availability of a new image, by running the following command:
+
+docker images
+
+
+
+Create ECR Registory
+
+
+ecr push commands
+
+authentication token and authenticate your Docker client to your registry:: 
+
+aws ecr get-login-password --region us-east-1 | docker login --username (user) --password-stdin 642.dkr.ecr.us-east-1.amazonaws.com
+
+Tag:
+docker tag kwanda:latest 642.dkr.ecr.us-east-1.amazonaws.com
+
+Push Docker Image:
+
+docker push 64.dkr.ecr.us-east-1.amazonaws.com/
+
+Image is now pushed to ECR repository, it can now be used in task definition to create services and tasks.

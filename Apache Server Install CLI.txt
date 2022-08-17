@@ -1,0 +1,34 @@
+
+
+
+Task 4: Install an Apache Server
+
+Switch to root user: sudo su
+
+Now run the updates using the following command: 
+
+yum -y update
+
+Once completed, lets install and run an apache server
+
+Install the Apache web server: 
+
+yum install httpd -y
+
+Start the web server 
+
+systemctl start httpd
+
+Now enable httpd: 
+
+systemctl enable httpd
+
+Check the webserver status
+
+systemctl status httpd
+
+You can see Active status is running.
+Restart the webserve
+
+systemctl restart httpd
+
