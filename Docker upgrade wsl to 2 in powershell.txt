@@ -1,0 +1,10 @@
+#upgare wsl to version 2
+
+#check wsl mode(version)
+wsl.exe -l -v
+
+
+# If your WSL is version 1, run command below to upgrade 
+wsl.exe --set-version ubuntu 2
+
+

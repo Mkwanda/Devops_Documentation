@@ -1,0 +1,5 @@
+aws s3 presign (URI) --expires-in 60
+
+sample URI below
+s3://mybucketzzxx3/task_id_36_creating_s3.png
+

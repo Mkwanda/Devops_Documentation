@@ -1,0 +1,39 @@
+{
+
+  "Parts": [
+
+    {
+
+      "PartNumber": 1,
+
+      "ETag": "\"70418ed5e552ea21deb8785359e69e28\""
+
+    },
+
+    {
+
+      "PartNumber": 2,
+
+      "ETag": "\"e0c16ead703bfcd1b36b339d9ae1901d\""
+
+    },
+
+    {
+
+      "PartNumber": 3,
+
+      "ETag": "\"56734bc19b453aab5144de4454945609\""
+
+    },
+
+    {
+
+      "PartNumber": 4,
+
+      "ETag": "\"7786233d68592caf07e93521cbd0a80e\""
+
+    }
+
+  ]
+
+}

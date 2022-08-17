@@ -1,0 +1,9 @@
+list drives Ebs volumes
+df-h
+lsblk
+
+grow partition (file system size increase)
+growpart /dev/xvda 1
+
+effect change extend partition in partition table
+xfs_growfs -d /

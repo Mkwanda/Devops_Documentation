@@ -1,0 +1,43 @@
+
+>> Split the Original File:
+split -b 40M video.mp4
+
+View the chunked files
+
+ls -lh
+
+Create a Multipart Upload and generate a UploadID :
+
+aws s3api create-multipart-upload --bucket s3multipart-final-2xccxx --key video.mp4
+
+"Bucket": "s3multipart-final-2xccxx",
+    "UploadId": "uClsmpmL3XeHIxcV3o5.0dBUPzz7LS7xnAsiepySPNYrOiY84_SBORSpzuwzyZFh_VodYegR4W_g2HhBCsVaa3NI_P2EnYSvCXDYcxLXlzhsbtWkxeuv5BNKUjdK1vr.nurJDbn3bEWbZuH_Epog0Q--",
+    "Key": "video.mp4"
+
+
+ aws s3api upload-part --bucket s3multipart-final-2xccxx --key video.mp4 --part-number 1 --body xaa --upload-id uClsmpmL3XeHIxcV3o5.0dBUPzz7LS7xnAsiepySPNYrOiY84_SBORSpzuwzyZFh_VodYegR4W_g2HhBCsVaa3NI_P2EnYSvCXDYcxLXlzhsbtWkxeuv5BNKUjdK1vr.nurJDbn3bEWbZuH_Epog0Q--
+
+part-number 1 xaa
+
+"ETag": "\"70418ed5e552ea21deb8785359e69e28\""
+
+part-number 2 xab
+ "ETag": "\"e0c16ead703bfcd1b36b339d9ae1901d\""
+
+part-number 3 xac
+
+"ETag": "\"56734bc19b453aab5144de4454945609\""
+
+part-number 4 xad
+"ETag": "\"7786233d68592caf07e93521cbd0a80e\""
+
+complete
+
+aws s3api complete-multipart-upload --multipart-upload file://list.json --bucket s3multipart-final-2xccxx --key video.mp4 --upload-id uClsmpmL3XeHIxcV3o5.0dBUPzz7LS7xnAsiepySPNYrOiY84_SBORSpzuwzyZFh_VodYegR4W_g2HhBCsVaa3NI_P2EnYSvCXDYcxLXlzhsbtWkxeuv5BNKUjdK1vr.nurJDbn3bEWbZuH_Epog0Q--
+
+
+mesage 
+ "ETag": "\"c4bd0807a6535303d596c253cb69cd11-4\"",
+    "Bucket": "s3multipart-final-2xccxx",
+    "Location": "https://s3multipart-final-2xccxx.s3.amazonaws.com/video.mp4",
+    "Key": "video.mp4"

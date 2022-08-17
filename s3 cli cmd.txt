@@ -1,0 +1,7 @@
+chmod 400 livekey.pem
+
+aws s3 ls
+
+touch new.txt smile.txt
+
+aws s3 mv new.txt s3://<your_bucket_name>
